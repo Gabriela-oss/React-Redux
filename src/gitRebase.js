@@ -1,4 +1,4 @@
-let add = (a, b) => a + b;
+let add = (a, b) => a + b + 10;
 
 let sub = (a, b) => a - b;
 
