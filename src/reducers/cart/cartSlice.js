@@ -2,8 +2,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-	email: "g@gmail.com",
-	fullName: "Gabriela Solis",
+	totalCount: 0,
+	productList: "",
 	token: "12345ñplk",
 };
 

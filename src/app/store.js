@@ -1,10 +1,13 @@
+//Libs
 import { configureStore } from "@reduxjs/toolkit";
-
 //Reducers
-import { useReducer } from "../reducers/user/userSlice";
+import { userReducer } from "../reducers/user/userSlice";
 
 export default configureStore({
   reducer:{
-    user: useReducer
+    user: userReducer
   }
 })
+
+
+
