@@ -16,7 +16,7 @@ export const userSlice = createSlice({
 			state.fullName = action.payload.fullName;
 			state.token = action.payload.token;
 		},
-		unSetUser: (state, action) => {
+		unSetUser: (state) => {
 			state.email = "";
 			state.fullName = "";
 			state.token = "";

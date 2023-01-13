@@ -3,23 +3,21 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
 	totalCount: 0,
-	productList: "",
-	token: "12345ñplk",
+	productsList: [],
 };
 
-export const userSlice = createSlice({
-	name: "user",
+export const cartSlice = createSlice({
+	name: "cart",
 	initialState: initialState,
 	reducers: {
-    setUser: (state, action) => {
-      state.email = action.payload.email;
-      state.fullName = action.payload.fullName;
-      state.token = action.payload.token;
-    }
-  },
+		addProductToCart: (state, action) => {
+			state.productsList = [...state.productsList, action.payload];
+			state.totalCount += 1;
+		},
+	},
 });
 
-//action creators are generated for each case reducer function -> userSLice devuelve un objeto llamado actions
-export const { setUser } = userSlice.actions;
+//action creators are generated for each case reducer function -> cartSLice devuelve un objeto llamado actions
+export const { addProductToCart } = cartSlice.actions;
 
-export default userSlice.reducer;
+export default cartSlice.reducer;
