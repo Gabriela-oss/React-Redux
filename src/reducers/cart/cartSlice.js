@@ -14,10 +14,15 @@ export const cartSlice = createSlice({
 			state.productsList = [...state.productsList, action.payload];
 			state.totalCount += 1;
 		},
+		removeProductFromCart: (state, action) => {
+			const productId = action.payload;
+			state.totalCount -= 1;
+			state.productsList = state.productsList.filter(product => product.id !== productId)
+		},
 	},
 });
 
 //action creators are generated for each case reducer function -> cartSLice devuelve un objeto llamado actions
-export const { addProductToCart } = cartSlice.actions;
+export const { addProductToCart, removeProductFromCart } = cartSlice.actions;
 
 export default cartSlice.reducer;
